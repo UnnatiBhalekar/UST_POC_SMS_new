@@ -18,34 +18,44 @@ import com.poc.app.service.StandardService;
 import com.poc.app.service.SubjectService;
 
 @RestController
-@RequestMapping("/standard")
+//@RequestMapping("/standard")
 public class StandardController {
 	
 	@Autowired
 	StandardService standardService;
 	
-	@PostMapping("/save")
+	@PostMapping("/admin/standard/save")
 	public List<Standard> saveSubject(@RequestBody List<Standard> standard) {
 		return standardService.saveStandard(standard);
 	
 	}
 	
-	@GetMapping("/display")
+	@GetMapping("/user/standard/display")
 	public List<Standard> displayStandard(){
 		return standardService.displayStandard();
 	}
 	
-	@GetMapping("/search/id/{id}")
+	@GetMapping("/admin/standard/display")
+	public List<Standard> displayStandard1(){
+		return standardService.displayStandard1();
+	}
+	
+	@GetMapping("/user/standard/search/id/{id}")
 	public Standard searchStandardById(@PathVariable int id) {
 		return standardService.searchStandardById(id);
 	}
 	
-	@DeleteMapping("/delete/id/{id}")
+	@GetMapping("/admin/standard/search/id/{id}")
+	public Standard searchStandardById1(@PathVariable int id) {
+		return standardService.searchStandardById1(id);
+	}
+	
+	@DeleteMapping("/admin/standard/delete/id/{id}")
 	public void DeleteStandardById(@PathVariable int id) {
 		standardService.DeleteStandardById(id);
 	}
 	
-	@PutMapping(path = "/update")
+	@PutMapping(path = "/admin/standard/update")
     public Object update(@RequestBody Standard standard) {
         return standardService.updateStandard(standard);
     }

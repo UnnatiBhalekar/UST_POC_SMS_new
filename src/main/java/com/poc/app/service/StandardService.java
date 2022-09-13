@@ -41,6 +41,18 @@ public class StandardService {
 		standardRepository.deleteById(standard_id);
 		
 	}
+
+	public List<Standard> displayStandard1() {
+		List<Standard> standard=standardRepository.findAll();
+		return standard;
+
+	}
+	
+	public Standard searchStandardById1(int standard_id) {
+		Standard s = standardRepository.findById(standard_id).get();
+		return s;
+		
+	}
 	
 	
 

@@ -15,9 +15,20 @@ public class Login {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int login_id;
 	
+	private String username;
+	
 	private String password;
 	
 	private String role;
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 
 	public int getLogin_id() {
 		return login_id;
