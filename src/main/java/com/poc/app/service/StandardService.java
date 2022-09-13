@@ -20,5 +20,28 @@ public class StandardService {
 	public List<Standard> saveStandard(List<Standard> standard) {
 		return standardRepository.saveAll(standard);
 	}
+	
+	public Standard searchStandardById(int standard_id) {
+		Standard s = standardRepository.findById(standard_id).get();
+		return s;
+		
+	}
+	
+	  public Object updateStandard(Standard standard) {
+		  if(standardRepository.existsById(standard.getStandard_id())) {
+			  Standard updatedvehicle = standardRepository.save(standard);
+		        return updatedvehicle;
+		  }
+		  else {
+			  return "Data Not Found";
+		  }
+	    }
+	
+	public void DeleteStandardById(int standard_id) {
+		standardRepository.deleteById(standard_id);
+		
+	}
+	
+	
 
 }
