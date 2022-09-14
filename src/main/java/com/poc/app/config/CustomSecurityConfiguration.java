@@ -16,8 +16,8 @@ import com.poc.app.config.CustomUserDetailsService;
 public class CustomSecurityConfiguration extends WebMvcConfigurerAdapter{
 	
 	private void configure(HttpSecurity http) throws Exception{
-		http.authorizeHttpRequests().antMatchers("/admin/*").hasRole("ADMIN")//http://localhost:8080/admin/"
-		.antMatchers("/user/*").hasRole("USER")//.and().httpBasic();
+		http.authorizeHttpRequests().antMatchers("/admin/*").hasRole("admin")//http://localhost:8080/admin/"
+		.antMatchers("/user/*").hasRole("user")//.and().httpBasic();
 		.antMatchers("/*").authenticated().and().formLogin();
 		
 	}

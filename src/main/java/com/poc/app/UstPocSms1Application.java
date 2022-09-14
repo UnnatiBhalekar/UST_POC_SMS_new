@@ -24,12 +24,12 @@ public class UstPocSms1Application implements CommandLineRunner{
 		Login login = new Login();
 		login.setUsername("kumar");
 		login.setPassword("kumar");
-		login.setRole("ADMIN");
+		login.setRole("admin");
 		
 		Login login1 = new Login();
 		login1.setUsername("test");
 		login1.setPassword("test");
-		login1.setRole("USER");
+		login1.setRole("user");
 		
 		loginRepository.save(login);
 		loginRepository.save(login1);
